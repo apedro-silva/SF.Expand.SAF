@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{3626A422-A9AF-48E9-BCE6-1A4E62DB0A48}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SF.Expand.SAF.CorePublicItf</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SF.Expand.SAF.CryptoEngine">
+      <HintPath>..\..\..\ExpandSecure\Business\Bin\SF.Expand.SAF.CryptoEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data" />
+    <Reference Include="System" />
+    <Reference Include="System.Data.OracleClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SF.Expand.SAF.CorePublicItf\APPEVENTSDeff.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\AutenticationStatus.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\AuthExtension.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\AuthExtensionAttribute.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\AuthHeader.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\DALOracle.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\DALSqlServer.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\ISAFEvents.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\ITokenRules.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\ITokens.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\ITokenValidator.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\OperationResult.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\SAFEventsFactory.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\SAFInternalEvents.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenDeviceType.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenEventOperation.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenInfo.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenInfoCore.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenMovingFactorType.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenRulesFactory.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenSeedType.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokensEventFields.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokensEvents.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenStatus.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokensUser.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokensVendorList.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenTotals.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenTotalsByType.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenUserTotals.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenValidationCountByUser.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenValidationsCount.cs" />
+    <Compile Include="SF.Expand.SAF.Exceptions\SAFBusinessException.cs" />
+    <Compile Include="SF.Expand.SAF.Exceptions\SAFCoreException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\SF.Expand.SAF.Configuration\SF.Expand.SAF.Configuration.csproj">
+      <Project>{75bdfc69-9ed4-4263-afd1-767d83a56064}</Project>
+      <Name>SF.Expand.SAF.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\SF.Expand.SAFLOGGER\SF.Expand.SAFLOGGER.csproj">
+      <Project>{7dd3711f-7eaa-472e-bba6-2c5d6cf7e317}</Project>
+      <Name>SF.Expand.SAFLOGGER</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

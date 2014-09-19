@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{447C5307-94B0-4308-AB48-F10B73ACEDEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SF.Expand.SAF.Tokens</RootNamespace>
+    <AssemblyName>SF.Expand.SAF.Tokens.Google</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GoogleAuthenticatorTokenValidator.cs" />
+    <Compile Include="GoogleAuthenticatorTokenManagement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Black-Box\SF.Expand.SAF.Blobs\SF.Expand.SAF.Blobs.csproj">
+      <Project>{ff415aec-e4c3-435f-90f2-ec61f3ca255a}</Project>
+      <Name>SF.Expand.SAF.Blobs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Black-Box\SF.Expand.SAF.Core\SF.Expand.SAF.Core.csproj">
+      <Project>{6101bf92-c4b8-4270-8d41-24bbe269bcac}</Project>
+      <Name>SF.Expand.SAF.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Black-Box\SF.Expand.SAF.CryptoEngine\SF.Expand.SAF.CryptoEngine.csproj">
+      <Project>{4f75dcd8-16a5-4914-8801-98b767f30cb7}</Project>
+      <Name>SF.Expand.SAF.CryptoEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\SF.Expand.SAF.Configuration\SF.Expand.SAF.Configuration.csproj">
+      <Project>{75bdfc69-9ed4-4263-afd1-767d83a56064}</Project>
+      <Name>SF.Expand.SAF.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Public\SF.Expand.SAF.CorePublicItf\SF.Expand.SAF.CorePublicItf.csproj">
+      <Project>{3626a422-a9af-48e9-bce6-1a4e62db0a48}</Project>
+      <Name>SF.Expand.SAF.CorePublicItf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

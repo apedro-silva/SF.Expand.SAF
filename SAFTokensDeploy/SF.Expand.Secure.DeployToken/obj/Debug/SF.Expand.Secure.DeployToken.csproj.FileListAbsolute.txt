@@ -1,0 +1,2 @@
+E:\WorkInProgress\ExpandSecureV1.1\SAFTokensDeploy\SF.Expand.Secure.DeployToken\obj\Debug\SF.Expand.Secure.DeployToken.csprojResolveAssemblyReference.cache
+E:\WorkInProgress\BANIF.MALTA\SAF\SAFTokensDeploy\SF.Expand.Secure.DeployToken\obj\Debug\SF.Expand.Secure.DeployToken.csprojResolveAssemblyReference.cache

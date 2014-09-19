@@ -1,0 +1,2294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://sfexpandsecure.business.softfinanca.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://sfexpandsecure.business.softfinanca.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ExpandSAF.Business Services</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://sfexpandsecure.business.softfinanca.com">
+      <s:element name="loadDeploymentInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inputParameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadDeploymentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadDeploymentInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLoadAllTokens">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLoadAllTokensResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLoadAllTokensResult" type="tns:ArrayOfTokenInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTokenInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TokenInfo" nillable="true" type="tns:TokenInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TokenInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:TokenStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumberUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddressUser" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegisteredTimeStamp" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastStatusChangedTimeStamp" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="tokenInfoCore" type="tns:TokenInfoCore" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TokenStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Undefined" />
+          <s:enumeration value="ReadyToDeploy" />
+          <s:enumeration value="DeployCompleted" />
+          <s:enumeration value="Enabled" />
+          <s:enumeration value="Disabled" />
+          <s:enumeration value="Canceled" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="TokenInfoCore">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InternalID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TypeID" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="InternalStatus" type="tns:TokenStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupplierLotID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupplierSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InternalSerialNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpirationTimeStamp" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubLotID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="userLoadActiveTokens">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLoadActiveTokensResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLoadActiveTokensResult" type="tns:ArrayOfTokenInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLoadCanceledTokens">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLoadCanceledTokensResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLoadCanceledTokensResult" type="tns:ArrayOfTokenInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLoadDisabledTokens">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLoadDisabledTokensResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLoadDisabledTokensResult" type="tns:ArrayOfTokenInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLoadTokenType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenTypeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userLoadTokenTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userLoadTokenTypeResult" type="tns:ArrayOfTokenInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userTokenGetStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userApplicationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userTokenGetStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userTokenGetStatusResult" type="tns:OperationResult" />
+            <s:element minOccurs="1" maxOccurs="1" name="tokenStatus" type="tns:TokenStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="OperationResult">
+        <s:restriction base="s:string">
+          <s:enumeration value="Success" />
+          <s:enumeration value="Error" />
+          <s:enumeration value="TokenVendorSeedNotAvaliable" />
+          <s:enumeration value="WrongStatusForRequestedOperation" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="loadTokensByPhoneNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadTokensByPhoneNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadTokensByPhoneNumberResult" type="tns:ArrayOfTokenInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userTokenGetEvendorID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userApplicationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="userTokenGetEvendorIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userTokenGetEvendorIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadTokenVendorTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadTokenVendorTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadTokenVendorTableResult" type="tns:ArrayOfTokensVendorList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTokensVendorList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TokensVendorList" nillable="true" type="tns:TokensVendorList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TokensVendorList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TokenVendorID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenMovingFactorType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenVendorDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="loadAllTokensCanceled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllTokensCanceledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadAllTokensCanceledResult" type="tns:ArrayOfTokenInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllTokensDisabled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllTokensDisabledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadAllTokensDisabledResult" type="tns:ArrayOfTokenInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllTokensEnabled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllTokensEnabledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadAllTokensEnabledResult" type="tns:ArrayOfTokenInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadTokenValidationsCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tokenType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadTokenValidationsCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadTokenValidationsCountResult" type="tns:ArrayOfTokenValidationsCount" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTokenValidationsCount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TokenValidationsCount" nillable="true" type="tns:TokenValidationsCount" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TokenValidationsCount">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TokenType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FailsCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SuccessCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="loadAllTokensCreated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllTokensCreatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadAllTokensCreatedResult" type="tns:ArrayOfTokenInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadTokenUserTotals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadTokenUserTotalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadTokenUserTotalsResult" type="tns:TokenUserTotals" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TokenUserTotals">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUsers" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUsersWithCanceledTokens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUsersWithSmsToken" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUsersWithMobileTokens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUsersWithSmsMobileTokens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUsersMobileActiveTokens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUsersWithMobileUndeployedTokens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUsersWithMobileErrorTokens" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="loadTokenTotalsByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadTokenTotalsByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadTokenTotalsByTypeResult" type="tns:ArrayOfTokenTotalsByType" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTokenTotalsByType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TokenTotalsByType" nillable="true" type="tns:TokenTotalsByType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TokenTotalsByType">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalSMS" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalMobile" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalTanCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="loadTokenTotals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadTokenTotalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadTokenTotalsResult" type="tns:ArrayOfTokenTotals" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTokenTotals">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TokenTotals" nillable="true" type="tns:TokenTotals" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TokenTotals">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TokenType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedTokens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnabledTokens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanceledTokens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstalledTokens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UndeployedTokens" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorTokens" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="loadTokenValidationsCountByUserPAG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicationUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tokenType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadTokenValidationsCountByUserPAGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadTokenValidationsCountByUserPAGResult" type="tns:ArrayOfTokenValidationCountByUser" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTokenValidationCountByUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TokenValidationCountByUser" nillable="true" type="tns:TokenValidationCountByUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TokenValidationCountByUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SucessCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FailCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="exportMatrixPositionsBySubLotID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subLotID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenVendorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exportMatrixPositionsBySubLotIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="exportMatrixPositionsBySubLotIDResult" type="tns:OperationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exportMatrixPositionsBySupplierLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supplierLotID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenVendorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exportMatrixPositionsBySupplierLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="exportMatrixPositionsBySupplierLotResult" type="tns:OperationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exportSupplierSerialNumberBySubLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subLotID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenVendorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exportSupplierSerialNumberBySubLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="exportSupplierSerialNumberBySubLotResult" type="tns:OperationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exportSupplierSerialNumberBySupplierLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supplierLotID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenVendorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exportSupplierSerialNumberBySupplierLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="exportSupplierSerialNumberBySupplierLotResult" type="tns:OperationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="seedsLoadSubLotsBySupplierLotID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supplierLotId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="seedsLoadSubLotsBySupplierLotIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="seedsLoadSubLotsBySupplierLotIDResult" type="tns:OperationResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="seedsLoadSubLots">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="seedsLoadSubLotsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="seedsLoadSubLotsResult" type="tns:OperationResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="seedsLoadSubLotsByParamsID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramsId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="seedsLoadSubLotsByParamsIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="seedsLoadSubLotsByParamsIDResult" type="tns:OperationResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadSupplierLotsByParamsID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenParamsID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadSupplierLotsByParamsIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loadSupplierLotsByParamsIDResult" type="tns:OperationResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadSeedsStatusByParamsID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadSeedsStatusByParamsIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loadSeedsStatusByParamsIDResult" type="tns:OperationResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadSeedsStatusBySublotID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadSeedsStatusBySublotIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loadSeedsStatusBySublotIDResult" type="tns:OperationResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadSeedsStatusBySupplierLotID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadSeedsStatusBySupplierLotIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loadSeedsStatusBySupplierLotIDResult" type="tns:OperationResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="seedsStatusSublotBySupplierLotID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="supplierLotID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="seedsStatusSublotBySupplierLotIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="seedsStatusSublotBySupplierLotIDResult" type="tns:OperationResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataTable">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getApplicationParameters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getApplicationParametersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getApplicationParametersResult" type="tns:ArrayOfSAFConfigurationParameter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSAFConfigurationParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SAFConfigurationParameter" nillable="true" type="tns:SAFConfigurationParameter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SAFConfigurationParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="section" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lastUTCupdate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="frozen" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="hidden" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateApplicationParameter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parameterName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldParameterValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newParameterValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateApplicationParameterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateApplicationParameterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLogPAG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serviceOperation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loggerLevel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLogPAGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getLogPAGResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSeedsFilePath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSeedsFilePathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSeedsFilePathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getServiceOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getServiceOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getServiceOperationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllEvents">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateInitial" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFinal" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenParamsID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventOperation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicationUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllEventsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadAllEventsResult" type="tns:ArrayOfTokensEvents" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTokensEvents">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TokensEvents" nillable="true" type="tns:TokensEvents" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TokensEvents">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="eventID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestedDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExecutedDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperationDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperationStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TokenID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="loadAllEventsByToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateInitial" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFinal" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllEventsByTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadAllEventsByTokenResult" type="tns:ArrayOfTokensEvents" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllEventsByOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dateInitial" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFinal" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventOperation" type="tns:TokenEventOperation" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="TokenEventOperation">
+        <s:restriction base="s:string">
+          <s:enumeration value="cTOKEN_ENABLE" />
+          <s:enumeration value="cTOKEN_DISABLE" />
+          <s:enumeration value="cTOKEN_CANCEL" />
+          <s:enumeration value="cTOKEN_UNDEFINED" />
+          <s:enumeration value="cTOKEN_READY_TO_DEPLOY" />
+          <s:enumeration value="cTOKEN_CREATED" />
+          <s:enumeration value="cTOKEN_REQUEST_CHALLENGE" />
+          <s:enumeration value="cTOKEN_REQUEST_VALIDATION" />
+          <s:enumeration value="cTOKEN_START_SERVER_AUTHENTICATION" />
+          <s:enumeration value="cTOKEN_REQUEST_SYNCHRONIZATION" />
+          <s:enumeration value="cTOKEN_RESET_ACTIVE_CHALLENGE" />
+          <s:enumeration value="cTOKEN_RESET_MOVING_FACTOR" />
+          <s:enumeration value="cTOKEN_HTTP_DEPLOY_REQUESTED" />
+          <s:enumeration value="cTOKEN_SMTP_DEPLOY_REQUESTED" />
+          <s:enumeration value="cTOKEN_SOCKET_DEPLOY_REQUESTED" />
+          <s:enumeration value="cTOKEN_SMS_DEPLOY_REQUESTED" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="loadAllEventsByOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadAllEventsByOperationResult" type="tns:ArrayOfTokensEvents" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllEventsWithError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dateInitial" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFinal" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadAllEventsWithErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadAllEventsWithErrorResult" type="tns:ArrayOfTokensEvents" />
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEventsOperation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEventsOperationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEventsOperationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTokensType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTokensTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTokensTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTanCodeLotMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lotID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenUserApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialCreationDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="finalCreationDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstItem" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageDirection" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTanCodeLotMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTanCodeLotMatrixResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="totRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="loadDeploymentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:loadDeploymentInfo" />
+  </wsdl:message>
+  <wsdl:message name="loadDeploymentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:loadDeploymentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="userLoadAllTokensSoapIn">
+    <wsdl:part name="parameters" element="tns:userLoadAllTokens" />
+  </wsdl:message>
+  <wsdl:message name="userLoadAllTokensSoapOut">
+    <wsdl:part name="parameters" element="tns:userLoadAllTokensResponse" />
+  </wsdl:message>
+  <wsdl:message name="userLoadActiveTokensSoapIn">
+    <wsdl:part name="parameters" element="tns:userLoadActiveTokens" />
+  </wsdl:message>
+  <wsdl:message name="userLoadActiveTokensSoapOut">
+    <wsdl:part name="parameters" element="tns:userLoadActiveTokensResponse" />
+  </wsdl:message>
+  <wsdl:message name="userLoadCanceledTokensSoapIn">
+    <wsdl:part name="parameters" element="tns:userLoadCanceledTokens" />
+  </wsdl:message>
+  <wsdl:message name="userLoadCanceledTokensSoapOut">
+    <wsdl:part name="parameters" element="tns:userLoadCanceledTokensResponse" />
+  </wsdl:message>
+  <wsdl:message name="userLoadDisabledTokensSoapIn">
+    <wsdl:part name="parameters" element="tns:userLoadDisabledTokens" />
+  </wsdl:message>
+  <wsdl:message name="userLoadDisabledTokensSoapOut">
+    <wsdl:part name="parameters" element="tns:userLoadDisabledTokensResponse" />
+  </wsdl:message>
+  <wsdl:message name="userLoadTokenTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:userLoadTokenType" />
+  </wsdl:message>
+  <wsdl:message name="userLoadTokenTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:userLoadTokenTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="userTokenGetStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:userTokenGetStatus" />
+  </wsdl:message>
+  <wsdl:message name="userTokenGetStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:userTokenGetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadTokensByPhoneNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:loadTokensByPhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="loadTokensByPhoneNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:loadTokensByPhoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="userTokenGetEvendorIDSoapIn">
+    <wsdl:part name="parameters" element="tns:userTokenGetEvendorID" />
+  </wsdl:message>
+  <wsdl:message name="userTokenGetEvendorIDSoapOut">
+    <wsdl:part name="parameters" element="tns:userTokenGetEvendorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenVendorTableSoapIn">
+    <wsdl:part name="parameters" element="tns:loadTokenVendorTable" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenVendorTableSoapOut">
+    <wsdl:part name="parameters" element="tns:loadTokenVendorTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadAllTokensCanceledSoapIn">
+    <wsdl:part name="parameters" element="tns:loadAllTokensCanceled" />
+  </wsdl:message>
+  <wsdl:message name="loadAllTokensCanceledSoapOut">
+    <wsdl:part name="parameters" element="tns:loadAllTokensCanceledResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadAllTokensDisabledSoapIn">
+    <wsdl:part name="parameters" element="tns:loadAllTokensDisabled" />
+  </wsdl:message>
+  <wsdl:message name="loadAllTokensDisabledSoapOut">
+    <wsdl:part name="parameters" element="tns:loadAllTokensDisabledResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadAllTokensEnabledSoapIn">
+    <wsdl:part name="parameters" element="tns:loadAllTokensEnabled" />
+  </wsdl:message>
+  <wsdl:message name="loadAllTokensEnabledSoapOut">
+    <wsdl:part name="parameters" element="tns:loadAllTokensEnabledResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenValidationsCountSoapIn">
+    <wsdl:part name="parameters" element="tns:loadTokenValidationsCount" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenValidationsCountSoapOut">
+    <wsdl:part name="parameters" element="tns:loadTokenValidationsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadAllTokensCreatedSoapIn">
+    <wsdl:part name="parameters" element="tns:loadAllTokensCreated" />
+  </wsdl:message>
+  <wsdl:message name="loadAllTokensCreatedSoapOut">
+    <wsdl:part name="parameters" element="tns:loadAllTokensCreatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenUserTotalsSoapIn">
+    <wsdl:part name="parameters" element="tns:loadTokenUserTotals" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenUserTotalsSoapOut">
+    <wsdl:part name="parameters" element="tns:loadTokenUserTotalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenTotalsByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:loadTokenTotalsByType" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenTotalsByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:loadTokenTotalsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenTotalsSoapIn">
+    <wsdl:part name="parameters" element="tns:loadTokenTotals" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenTotalsSoapOut">
+    <wsdl:part name="parameters" element="tns:loadTokenTotalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenValidationsCountByUserPAGSoapIn">
+    <wsdl:part name="parameters" element="tns:loadTokenValidationsCountByUserPAG" />
+  </wsdl:message>
+  <wsdl:message name="loadTokenValidationsCountByUserPAGSoapOut">
+    <wsdl:part name="parameters" element="tns:loadTokenValidationsCountByUserPAGResponse" />
+  </wsdl:message>
+  <wsdl:message name="exportMatrixPositionsBySubLotIDSoapIn">
+    <wsdl:part name="parameters" element="tns:exportMatrixPositionsBySubLotID" />
+  </wsdl:message>
+  <wsdl:message name="exportMatrixPositionsBySubLotIDSoapOut">
+    <wsdl:part name="parameters" element="tns:exportMatrixPositionsBySubLotIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="exportMatrixPositionsBySupplierLotSoapIn">
+    <wsdl:part name="parameters" element="tns:exportMatrixPositionsBySupplierLot" />
+  </wsdl:message>
+  <wsdl:message name="exportMatrixPositionsBySupplierLotSoapOut">
+    <wsdl:part name="parameters" element="tns:exportMatrixPositionsBySupplierLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="exportSupplierSerialNumberBySubLotSoapIn">
+    <wsdl:part name="parameters" element="tns:exportSupplierSerialNumberBySubLot" />
+  </wsdl:message>
+  <wsdl:message name="exportSupplierSerialNumberBySubLotSoapOut">
+    <wsdl:part name="parameters" element="tns:exportSupplierSerialNumberBySubLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="exportSupplierSerialNumberBySupplierLotSoapIn">
+    <wsdl:part name="parameters" element="tns:exportSupplierSerialNumberBySupplierLot" />
+  </wsdl:message>
+  <wsdl:message name="exportSupplierSerialNumberBySupplierLotSoapOut">
+    <wsdl:part name="parameters" element="tns:exportSupplierSerialNumberBySupplierLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="seedsLoadSubLotsBySupplierLotIDSoapIn">
+    <wsdl:part name="parameters" element="tns:seedsLoadSubLotsBySupplierLotID" />
+  </wsdl:message>
+  <wsdl:message name="seedsLoadSubLotsBySupplierLotIDSoapOut">
+    <wsdl:part name="parameters" element="tns:seedsLoadSubLotsBySupplierLotIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="seedsLoadSubLotsSoapIn">
+    <wsdl:part name="parameters" element="tns:seedsLoadSubLots" />
+  </wsdl:message>
+  <wsdl:message name="seedsLoadSubLotsSoapOut">
+    <wsdl:part name="parameters" element="tns:seedsLoadSubLotsResponse" />
+  </wsdl:message>
+  <wsdl:message name="seedsLoadSubLotsByParamsIDSoapIn">
+    <wsdl:part name="parameters" element="tns:seedsLoadSubLotsByParamsID" />
+  </wsdl:message>
+  <wsdl:message name="seedsLoadSubLotsByParamsIDSoapOut">
+    <wsdl:part name="parameters" element="tns:seedsLoadSubLotsByParamsIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadSupplierLotsByParamsIDSoapIn">
+    <wsdl:part name="parameters" element="tns:loadSupplierLotsByParamsID" />
+  </wsdl:message>
+  <wsdl:message name="loadSupplierLotsByParamsIDSoapOut">
+    <wsdl:part name="parameters" element="tns:loadSupplierLotsByParamsIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadSeedsStatusByParamsIDSoapIn">
+    <wsdl:part name="parameters" element="tns:loadSeedsStatusByParamsID" />
+  </wsdl:message>
+  <wsdl:message name="loadSeedsStatusByParamsIDSoapOut">
+    <wsdl:part name="parameters" element="tns:loadSeedsStatusByParamsIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadSeedsStatusBySublotIDSoapIn">
+    <wsdl:part name="parameters" element="tns:loadSeedsStatusBySublotID" />
+  </wsdl:message>
+  <wsdl:message name="loadSeedsStatusBySublotIDSoapOut">
+    <wsdl:part name="parameters" element="tns:loadSeedsStatusBySublotIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadSeedsStatusBySupplierLotIDSoapIn">
+    <wsdl:part name="parameters" element="tns:loadSeedsStatusBySupplierLotID" />
+  </wsdl:message>
+  <wsdl:message name="loadSeedsStatusBySupplierLotIDSoapOut">
+    <wsdl:part name="parameters" element="tns:loadSeedsStatusBySupplierLotIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="seedsStatusSublotBySupplierLotIDSoapIn">
+    <wsdl:part name="parameters" element="tns:seedsStatusSublotBySupplierLotID" />
+  </wsdl:message>
+  <wsdl:message name="seedsStatusSublotBySupplierLotIDSoapOut">
+    <wsdl:part name="parameters" element="tns:seedsStatusSublotBySupplierLotIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationParametersSoapIn">
+    <wsdl:part name="parameters" element="tns:getApplicationParameters" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationParametersSoapOut">
+    <wsdl:part name="parameters" element="tns:getApplicationParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateApplicationParameterSoapIn">
+    <wsdl:part name="parameters" element="tns:updateApplicationParameter" />
+  </wsdl:message>
+  <wsdl:message name="updateApplicationParameterSoapOut">
+    <wsdl:part name="parameters" element="tns:updateApplicationParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLogPAGSoapIn">
+    <wsdl:part name="parameters" element="tns:getLogPAG" />
+  </wsdl:message>
+  <wsdl:message name="getLogPAGSoapOut">
+    <wsdl:part name="parameters" element="tns:getLogPAGResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSeedsFilePathSoapIn">
+    <wsdl:part name="parameters" element="tns:getSeedsFilePath" />
+  </wsdl:message>
+  <wsdl:message name="getSeedsFilePathSoapOut">
+    <wsdl:part name="parameters" element="tns:getSeedsFilePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServiceOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:getServiceOperation" />
+  </wsdl:message>
+  <wsdl:message name="getServiceOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:getServiceOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadAllEventsSoapIn">
+    <wsdl:part name="parameters" element="tns:loadAllEvents" />
+  </wsdl:message>
+  <wsdl:message name="loadAllEventsSoapOut">
+    <wsdl:part name="parameters" element="tns:loadAllEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadAllEventsByTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:loadAllEventsByToken" />
+  </wsdl:message>
+  <wsdl:message name="loadAllEventsByTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:loadAllEventsByTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadAllEventsByOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:loadAllEventsByOperation" />
+  </wsdl:message>
+  <wsdl:message name="loadAllEventsByOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:loadAllEventsByOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadAllEventsWithErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:loadAllEventsWithError" />
+  </wsdl:message>
+  <wsdl:message name="loadAllEventsWithErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:loadAllEventsWithErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEventsOperationSoapIn">
+    <wsdl:part name="parameters" element="tns:getEventsOperation" />
+  </wsdl:message>
+  <wsdl:message name="getEventsOperationSoapOut">
+    <wsdl:part name="parameters" element="tns:getEventsOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTokensTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:getTokensType" />
+  </wsdl:message>
+  <wsdl:message name="getTokensTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:getTokensTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTanCodeLotMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:getTanCodeLotMatrix" />
+  </wsdl:message>
+  <wsdl:message name="getTanCodeLotMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:getTanCodeLotMatrixResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SAFBusinessServicesSoap">
+    <wsdl:operation name="loadDeploymentInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deploy mobile token, thru http request!</wsdl:documentation>
+      <wsdl:input message="tns:loadDeploymentInfoSoapIn" />
+      <wsdl:output message="tns:loadDeploymentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userLoadAllTokens">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all tokens for the specified user</wsdl:documentation>
+      <wsdl:input message="tns:userLoadAllTokensSoapIn" />
+      <wsdl:output message="tns:userLoadAllTokensSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userLoadActiveTokens">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all active tokens for the specified user</wsdl:documentation>
+      <wsdl:input message="tns:userLoadActiveTokensSoapIn" />
+      <wsdl:output message="tns:userLoadActiveTokensSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userLoadCanceledTokens">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all canceled tokens for the specified user</wsdl:documentation>
+      <wsdl:input message="tns:userLoadCanceledTokensSoapIn" />
+      <wsdl:output message="tns:userLoadCanceledTokensSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userLoadDisabledTokens">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all canceled tokens for the specified user</wsdl:documentation>
+      <wsdl:input message="tns:userLoadDisabledTokensSoapIn" />
+      <wsdl:output message="tns:userLoadDisabledTokensSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userLoadTokenType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all tokens for the specified user and token type</wsdl:documentation>
+      <wsdl:input message="tns:userLoadTokenTypeSoapIn" />
+      <wsdl:output message="tns:userLoadTokenTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userTokenGetStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get status for the specified token</wsdl:documentation>
+      <wsdl:input message="tns:userTokenGetStatusSoapIn" />
+      <wsdl:output message="tns:userTokenGetStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadTokensByPhoneNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all tokens associated with one number</wsdl:documentation>
+      <wsdl:input message="tns:loadTokensByPhoneNumberSoapIn" />
+      <wsdl:output message="tns:loadTokensByPhoneNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="userTokenGetEvendorID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Identify token provider ID</wsdl:documentation>
+      <wsdl:input message="tns:userTokenGetEvendorIDSoapIn" />
+      <wsdl:output message="tns:userTokenGetEvendorIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenVendorTable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load tokens token vendor´s table</wsdl:documentation>
+      <wsdl:input message="tns:loadTokenVendorTableSoapIn" />
+      <wsdl:output message="tns:loadTokenVendorTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensCanceled">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all canceled tokens between dates</wsdl:documentation>
+      <wsdl:input message="tns:loadAllTokensCanceledSoapIn" />
+      <wsdl:output message="tns:loadAllTokensCanceledSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensDisabled">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all disabled tokens between dates</wsdl:documentation>
+      <wsdl:input message="tns:loadAllTokensDisabledSoapIn" />
+      <wsdl:output message="tns:loadAllTokensDisabledSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensEnabled">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all enabled tokens between dates</wsdl:documentation>
+      <wsdl:input message="tns:loadAllTokensEnabledSoapIn" />
+      <wsdl:output message="tns:loadAllTokensEnabledSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenValidationsCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validations by Token Type</wsdl:documentation>
+      <wsdl:input message="tns:loadTokenValidationsCountSoapIn" />
+      <wsdl:output message="tns:loadTokenValidationsCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensCreated">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all created tokens between dates</wsdl:documentation>
+      <wsdl:input message="tns:loadAllTokensCreatedSoapIn" />
+      <wsdl:output message="tns:loadAllTokensCreatedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenUserTotals">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load token user totals between dates</wsdl:documentation>
+      <wsdl:input message="tns:loadTokenUserTotalsSoapIn" />
+      <wsdl:output message="tns:loadTokenUserTotalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenTotalsByType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load token totals by type</wsdl:documentation>
+      <wsdl:input message="tns:loadTokenTotalsByTypeSoapIn" />
+      <wsdl:output message="tns:loadTokenTotalsByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenTotals">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load token totals</wsdl:documentation>
+      <wsdl:input message="tns:loadTokenTotalsSoapIn" />
+      <wsdl:output message="tns:loadTokenTotalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenValidationsCountByUserPAG">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load token validations count by user pag</wsdl:documentation>
+      <wsdl:input message="tns:loadTokenValidationsCountByUserPAGSoapIn" />
+      <wsdl:output message="tns:loadTokenValidationsCountByUserPAGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="exportMatrixPositionsBySubLotID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export file with matrix values</wsdl:documentation>
+      <wsdl:input message="tns:exportMatrixPositionsBySubLotIDSoapIn" />
+      <wsdl:output message="tns:exportMatrixPositionsBySubLotIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="exportMatrixPositionsBySupplierLot">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export file with matrix values</wsdl:documentation>
+      <wsdl:input message="tns:exportMatrixPositionsBySupplierLotSoapIn" />
+      <wsdl:output message="tns:exportMatrixPositionsBySupplierLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="exportSupplierSerialNumberBySubLot">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export file with token supplier serial number</wsdl:documentation>
+      <wsdl:input message="tns:exportSupplierSerialNumberBySubLotSoapIn" />
+      <wsdl:output message="tns:exportSupplierSerialNumberBySubLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="exportSupplierSerialNumberBySupplierLot">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Export file with token supplier serial number</wsdl:documentation>
+      <wsdl:input message="tns:exportSupplierSerialNumberBySupplierLotSoapIn" />
+      <wsdl:output message="tns:exportSupplierSerialNumberBySupplierLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="seedsLoadSubLotsBySupplierLotID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load datatable with seeds status by supplier lots</wsdl:documentation>
+      <wsdl:input message="tns:seedsLoadSubLotsBySupplierLotIDSoapIn" />
+      <wsdl:output message="tns:seedsLoadSubLotsBySupplierLotIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="seedsLoadSubLots">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load datatable with seeds status generic</wsdl:documentation>
+      <wsdl:input message="tns:seedsLoadSubLotsSoapIn" />
+      <wsdl:output message="tns:seedsLoadSubLotsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="seedsLoadSubLotsByParamsID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load datatable sub lots</wsdl:documentation>
+      <wsdl:input message="tns:seedsLoadSubLotsByParamsIDSoapIn" />
+      <wsdl:output message="tns:seedsLoadSubLotsByParamsIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadSupplierLotsByParamsID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load all supplier lots by tokenParamsID</wsdl:documentation>
+      <wsdl:input message="tns:loadSupplierLotsByParamsIDSoapIn" />
+      <wsdl:output message="tns:loadSupplierLotsByParamsIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadSeedsStatusByParamsID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load seeds status generic</wsdl:documentation>
+      <wsdl:input message="tns:loadSeedsStatusByParamsIDSoapIn" />
+      <wsdl:output message="tns:loadSeedsStatusByParamsIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadSeedsStatusBySublotID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load seeds status generic by sub lotID</wsdl:documentation>
+      <wsdl:input message="tns:loadSeedsStatusBySublotIDSoapIn" />
+      <wsdl:output message="tns:loadSeedsStatusBySublotIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadSeedsStatusBySupplierLotID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load seeds status by supplier lotID</wsdl:documentation>
+      <wsdl:input message="tns:loadSeedsStatusBySupplierLotIDSoapIn" />
+      <wsdl:output message="tns:loadSeedsStatusBySupplierLotIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="seedsStatusSublotBySupplierLotID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load seeds subLot status by supplier lotID</wsdl:documentation>
+      <wsdl:input message="tns:seedsStatusSublotBySupplierLotIDSoapIn" />
+      <wsdl:output message="tns:seedsStatusSublotBySupplierLotIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationParameters">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of application parameters</wsdl:documentation>
+      <wsdl:input message="tns:getApplicationParametersSoapIn" />
+      <wsdl:output message="tns:getApplicationParametersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateApplicationParameter">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update application parameter</wsdl:documentation>
+      <wsdl:input message="tns:updateApplicationParameterSoapIn" />
+      <wsdl:output message="tns:updateApplicationParameterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLogPAG">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get log page</wsdl:documentation>
+      <wsdl:input message="tns:getLogPAGSoapIn" />
+      <wsdl:output message="tns:getLogPAGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSeedsFilePath">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Seeds file path</wsdl:documentation>
+      <wsdl:input message="tns:getSeedsFilePathSoapIn" />
+      <wsdl:output message="tns:getSeedsFilePathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Service Operations</wsdl:documentation>
+      <wsdl:input message="tns:getServiceOperationSoapIn" />
+      <wsdl:output message="tns:getServiceOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEvents">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load token events</wsdl:documentation>
+      <wsdl:input message="tns:loadAllEventsSoapIn" />
+      <wsdl:output message="tns:loadAllEventsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEventsByToken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load seeds subLot status by supplier lotID</wsdl:documentation>
+      <wsdl:input message="tns:loadAllEventsByTokenSoapIn" />
+      <wsdl:output message="tns:loadAllEventsByTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEventsByOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load seeds subLot status by supplier lotID</wsdl:documentation>
+      <wsdl:input message="tns:loadAllEventsByOperationSoapIn" />
+      <wsdl:output message="tns:loadAllEventsByOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEventsWithError">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load seeds subLot status by supplier lotID</wsdl:documentation>
+      <wsdl:input message="tns:loadAllEventsWithErrorSoapIn" />
+      <wsdl:output message="tns:loadAllEventsWithErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEventsOperation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Events Operation</wsdl:documentation>
+      <wsdl:input message="tns:getEventsOperationSoapIn" />
+      <wsdl:output message="tns:getEventsOperationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTokensType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Tokens Type</wsdl:documentation>
+      <wsdl:input message="tns:getTokensTypeSoapIn" />
+      <wsdl:output message="tns:getTokensTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTanCodeLotMatrix">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get TanCode Lot Matrix</wsdl:documentation>
+      <wsdl:input message="tns:getTanCodeLotMatrixSoapIn" />
+      <wsdl:output message="tns:getTanCodeLotMatrixSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SAFBusinessServicesSoap" type="tns:SAFBusinessServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="loadDeploymentInfo">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadDeploymentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLoadAllTokens">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userLoadAllTokens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLoadActiveTokens">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userLoadActiveTokens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLoadCanceledTokens">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userLoadCanceledTokens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLoadDisabledTokens">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userLoadDisabledTokens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLoadTokenType">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userLoadTokenType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userTokenGetStatus">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userTokenGetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokensByPhoneNumber">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokensByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userTokenGetEvendorID">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userTokenGetEvendorID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenVendorTable">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenVendorTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensCanceled">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllTokensCanceled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensDisabled">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllTokensDisabled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensEnabled">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllTokensEnabled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenValidationsCount">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenValidationsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensCreated">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllTokensCreated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenUserTotals">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenUserTotals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenTotalsByType">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenTotalsByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenTotals">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenTotals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenValidationsCountByUserPAG">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenValidationsCountByUserPAG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportMatrixPositionsBySubLotID">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/exportMatrixPositionsBySubLotID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportMatrixPositionsBySupplierLot">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/exportMatrixPositionsBySupplierLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportSupplierSerialNumberBySubLot">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/exportSupplierSerialNumberBySubLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportSupplierSerialNumberBySupplierLot">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/exportSupplierSerialNumberBySupplierLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seedsLoadSubLotsBySupplierLotID">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/seedsLoadSubLotsBySupplierLotID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seedsLoadSubLots">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/seedsLoadSubLots" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seedsLoadSubLotsByParamsID">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/seedsLoadSubLotsByParamsID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadSupplierLotsByParamsID">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadSupplierLotsByParamsID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadSeedsStatusByParamsID">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadSeedsStatusByParamsID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadSeedsStatusBySublotID">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadSeedsStatusBySublotID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadSeedsStatusBySupplierLotID">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadSeedsStatusBySupplierLotID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seedsStatusSublotBySupplierLotID">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/seedsStatusSublotBySupplierLotID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationParameters">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getApplicationParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateApplicationParameter">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/updateApplicationParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLogPAG">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getLogPAG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSeedsFilePath">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getSeedsFilePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceOperation">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getServiceOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEvents">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEventsByToken">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllEventsByToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEventsByOperation">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllEventsByOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEventsWithError">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllEventsWithError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEventsOperation">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getEventsOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTokensType">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getTokensType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTanCodeLotMatrix">
+      <soap:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getTanCodeLotMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SAFBusinessServicesSoap12" type="tns:SAFBusinessServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="loadDeploymentInfo">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadDeploymentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLoadAllTokens">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userLoadAllTokens" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLoadActiveTokens">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userLoadActiveTokens" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLoadCanceledTokens">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userLoadCanceledTokens" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLoadDisabledTokens">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userLoadDisabledTokens" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userLoadTokenType">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userLoadTokenType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userTokenGetStatus">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userTokenGetStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokensByPhoneNumber">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokensByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="userTokenGetEvendorID">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/userTokenGetEvendorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenVendorTable">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenVendorTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensCanceled">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllTokensCanceled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensDisabled">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllTokensDisabled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensEnabled">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllTokensEnabled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenValidationsCount">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenValidationsCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllTokensCreated">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllTokensCreated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenUserTotals">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenUserTotals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenTotalsByType">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenTotalsByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenTotals">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenTotals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadTokenValidationsCountByUserPAG">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadTokenValidationsCountByUserPAG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportMatrixPositionsBySubLotID">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/exportMatrixPositionsBySubLotID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportMatrixPositionsBySupplierLot">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/exportMatrixPositionsBySupplierLot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportSupplierSerialNumberBySubLot">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/exportSupplierSerialNumberBySubLot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportSupplierSerialNumberBySupplierLot">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/exportSupplierSerialNumberBySupplierLot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seedsLoadSubLotsBySupplierLotID">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/seedsLoadSubLotsBySupplierLotID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seedsLoadSubLots">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/seedsLoadSubLots" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seedsLoadSubLotsByParamsID">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/seedsLoadSubLotsByParamsID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadSupplierLotsByParamsID">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadSupplierLotsByParamsID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadSeedsStatusByParamsID">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadSeedsStatusByParamsID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadSeedsStatusBySublotID">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadSeedsStatusBySublotID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadSeedsStatusBySupplierLotID">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadSeedsStatusBySupplierLotID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seedsStatusSublotBySupplierLotID">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/seedsStatusSublotBySupplierLotID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApplicationParameters">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getApplicationParameters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateApplicationParameter">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/updateApplicationParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLogPAG">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getLogPAG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSeedsFilePath">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getSeedsFilePath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceOperation">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getServiceOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEvents">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllEvents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEventsByToken">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllEventsByToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEventsByOperation">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllEventsByOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadAllEventsWithError">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/loadAllEventsWithError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEventsOperation">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getEventsOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTokensType">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getTokensType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTanCodeLotMatrix">
+      <soap12:operation soapAction="http://sfexpandsecure.business.softfinanca.com/getTanCodeLotMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SAFBusinessServices">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ExpandSAF.Business Services</wsdl:documentation>
+    <wsdl:port name="SAFBusinessServicesSoap" binding="tns:SAFBusinessServicesSoap">
+      <soap:address location="http://localhost:49874/SF.Expand.Secure.BusinessServices/SF.Expand.Secure.BusinessServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SAFBusinessServicesSoap12" binding="tns:SAFBusinessServicesSoap12">
+      <soap12:address location="http://localhost:49874/SF.Expand.Secure.BusinessServices/SF.Expand.Secure.BusinessServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

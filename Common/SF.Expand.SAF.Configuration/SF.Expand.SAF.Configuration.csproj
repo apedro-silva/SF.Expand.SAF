@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{75BDFC69-9ED4-4263-AFD1-767D83A56064}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SF.Expand.SAF.Configuration</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SAFConfigurationDAO\DALSqlServer.cs" />
+    <Compile Include="SF.Expand.SAF.Configuration\DBConnectionString.cs" />
+    <Compile Include="SF.Expand.SAF.Configuration\SAFConfiguration.cs" />
+    <Compile Include="SF.Expand.SAF.Configuration\SAFConfigurationDAO.cs" />
+    <Compile Include="SF.Expand.SAF.Configuration\SAFConfigurationParameter.cs" />
+    <Compile Include="SF.Expand.SAF.Configuration\SAFConfigurationParametersMap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SF.Expand.SAFLOGGER\SF.Expand.SAFLOGGER.csproj">
+      <Project>{7dd3711f-7eaa-472e-bba6-2c5d6cf7e317}</Project>
+      <Name>SF.Expand.SAFLOGGER</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

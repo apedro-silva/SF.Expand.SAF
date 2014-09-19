@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10DE88A8-AB7A-4206-A93E-AA20B968E428}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SF.Expand.SAF.DeployToken</RootNamespace>
+    <AssemblyName>SF.Expand.SAF.DeployToken</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CabLib, Version=10.2.0.0, Culture=neutral, PublicKeyToken=5c838b77b53f84a0, processorArchitecture=x86" />
+    <Reference Include="Ionic.Zip.Reduced, Version=1.7.2.26, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAOClasses\DBConnectionString.cs" />
+    <Compile Include="DAOClasses\DeployTokenDAO.cs" />
+    <Compile Include="DeployFactory\DeployTokenFactory.cs" />
+    <Compile Include="DeployTokensImplementation\DEPLOYJ1POCKETPCINFOSRV.cs" />
+    <Compile Include="DeployTokensImplementation\DEPLOYJ1JAVAINFOSRV.cs" />
+    <Compile Include="DeployTokensImplementation\DEPLOYJ1WINMOBILEINFOSRV.cs" />
+    <Compile Include="HttpDeployProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicInterfaces\IDeployToken.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="External\CabLib.dll" />
+    <Content Include="External\infotoken.cab">
+    </Content>
+    <Content Include="External\infotoken.jar" />
+    <Content Include="External\Ionic.Zip.Reduced.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Black-Box\SF.Expand.SAF.Core\SF.Expand.SAF.Core.csproj">
+      <Project>{967DFDED-51B5-4CE6-808E-B204F9A4C4EF}</Project>
+      <Name>SF.Expand.SAF.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Black-Box\SF.Expand.SAF.CryptoEngine\SF.Expand.SAF.CryptoEngine.csproj">
+      <Project>{D77CE685-F35A-4CD7-A133-19319B4D4457}</Project>
+      <Name>SF.Expand.SAF.CryptoEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business Services\SF.Expand.Secure.Business\SF.Expand.Secure.Business.csproj">
+      <Project>{589356B6-5B3B-4C20-8EAB-9C30DCFABD1A}</Project>
+      <Name>SF.Expand.Secure.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\SF.Expand.SAF.Utils\SF.Expand.SAF.Utils.csproj">
+      <Project>{B7F8BF4E-55E9-4BBB-83CC-46951B86519F}</Project>
+      <Name>SF.Expand.SAF.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Public\SF.Expand.SAF.CorePublicItf\SF.Expand.SAF.CorePublicItf.csproj">
+      <Project>{992C8671-B97A-4A7F-91F5-5988D7116989}</Project>
+      <Name>SF.Expand.SAF.CorePublicItf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

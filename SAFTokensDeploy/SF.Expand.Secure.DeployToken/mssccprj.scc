@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[SF.Expand.Secure.DeployToken.csproj]
+SCC_Aux_Path = "\\sfvss1\ExpandSecure"
+SCC_Project_Name = "$/ExpandSecureV1.1/SAFTokensDeploy/SF.Expand.Secure.DeployToken", ZIDAAAAA

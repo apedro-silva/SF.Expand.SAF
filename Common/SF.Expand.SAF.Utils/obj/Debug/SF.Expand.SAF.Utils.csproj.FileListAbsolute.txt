@@ -1,0 +1,12 @@
+E:\WorkInProgress\ExpandSecureV1.1\Common\SF.Expand.SAF.Utils\bin\Debug\SF.Expand.SAF.Utils.dll
+E:\WorkInProgress\ExpandSecureV1.1\Common\SF.Expand.SAF.Utils\bin\Debug\SF.Expand.SAF.Utils.pdb
+E:\WorkInProgress\ExpandSecureV1.1\Common\SF.Expand.SAF.Utils\bin\Debug\log4net.dll
+E:\WorkInProgress\ExpandSecureV1.1\Common\SF.Expand.SAF.Utils\obj\Debug\SF.Expand.SAF.Utils.csprojResolveAssemblyReference.cache
+E:\WorkInProgress\ExpandSecureV1.1\Common\SF.Expand.SAF.Utils\obj\Debug\SF.Expand.SAF.Utils.dll
+E:\WorkInProgress\ExpandSecureV1.1\Common\SF.Expand.SAF.Utils\obj\Debug\SF.Expand.SAF.Utils.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Utils\bin\Debug\SF.Expand.SAF.Utils.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Utils\bin\Debug\SF.Expand.SAF.Utils.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Utils\obj\Debug\SF.Expand.SAF.Utils.csprojResolveAssemblyReference.cache
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Utils\obj\Debug\SF.Expand.SAF.Utils.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Utils\obj\Debug\SF.Expand.SAF.Utils.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Utils\bin\Debug\log4net.dll

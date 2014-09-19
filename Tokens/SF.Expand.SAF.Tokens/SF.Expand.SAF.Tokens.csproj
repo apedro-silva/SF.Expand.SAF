@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{956C59AE-9B4D-4445-AF95-477A0A5243DC}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SF.Expand.SAF.Tokens</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="SF.Expand.SAF.Tokens\ETokenPassManagement.cs" />
+    <Compile Include="SF.Expand.SAF.Tokens\ETokenPassValidator.cs" />
+    <Compile Include="SF.Expand.SAF.Tokens\InfoServerTANTokenManagement.cs" />
+    <Compile Include="SF.Expand.SAF.Tokens\InfoServerTANTokenValidator.cs" />
+    <Compile Include="SF.Expand.SAF.Tokens\PHONETokenManagement.cs" />
+    <Compile Include="SF.Expand.SAF.Tokens\PHONETokenValidator.cs" />
+    <Compile Include="SF.Expand.SAF.Tokens\SMSTokenManagement.cs" />
+    <Compile Include="SF.Expand.SAF.Tokens\SMSTokenValidator.cs" />
+    <Compile Include="SF.Expand.SAF.Tokens\TANTokenManagement.cs" />
+    <Compile Include="SF.Expand.SAF.Tokens\TANTokenValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\SF.Expand.SAF.Configuration\SF.Expand.SAF.Configuration.csproj">
+      <Project>{75bdfc69-9ed4-4263-afd1-767d83a56064}</Project>
+      <Name>SF.Expand.SAF.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Public\SF.Expand.SAF.CorePublicItf\SF.Expand.SAF.CorePublicItf.csproj">
+      <Project>{3626a422-a9af-48e9-bce6-1a4e62db0a48}</Project>
+      <Name>SF.Expand.SAF.CorePublicItf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Black-Box\SF.Expand.SAF.Blobs\SF.Expand.SAF.Blobs.csproj">
+      <Project>{ff415aec-e4c3-435f-90f2-ec61f3ca255a}</Project>
+      <Name>SF.Expand.SAF.Blobs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Black-Box\SF.Expand.SAF.Core\SF.Expand.SAF.Core.csproj">
+      <Project>{6101bf92-c4b8-4270-8d41-24bbe269bcac}</Project>
+      <Name>SF.Expand.SAF.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Black-Box\SF.Expand.SAF.CryptoEngine\SF.Expand.SAF.CryptoEngine.csproj">
+      <Project>{4f75dcd8-16a5-4914-8801-98b767f30cb7}</Project>
+      <Name>SF.Expand.SAF.CryptoEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

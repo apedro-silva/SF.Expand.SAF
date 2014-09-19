@@ -1,0 +1,7 @@
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Configuration\obj\Debug\SF.Expand.SAF.Configuration.csprojResolveAssemblyReference.cache
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Configuration\bin\Debug\SF.Expand.SAF.Configuration.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Configuration\bin\Debug\SF.Expand.SAF.Configuration.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Configuration\bin\Debug\SF.Expand.SAFLOGGER.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Configuration\bin\Debug\SF.Expand.SAFLOGGER.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Configuration\obj\Debug\SF.Expand.SAF.Configuration.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\Common\SF.Expand.SAF.Configuration\obj\Debug\SF.Expand.SAF.Configuration.pdb

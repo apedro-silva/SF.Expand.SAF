@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAF.CryptoEngine", "SF.Expand.SAF.CryptoEngine\SF.Expand.SAF.CryptoEngine.csproj", "{D77CE685-F35A-4CD7-A133-19319B4D4457}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccProjectUniqueName0 = SF.Expand.SAF.CryptoEngine\\SF.Expand.SAF.CryptoEngine.csproj
+		SccProjectName0 = \u0022$/ExpandSecureV1.1/Black-Box/SF.Expand.SAF.CryptoEngine\u0022,\u0020EGBAAAAA
+		SccLocalPath0 = SF.Expand.SAF.CryptoEngine
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D77CE685-F35A-4CD7-A133-19319B4D4457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77CE685-F35A-4CD7-A133-19319B4D4457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77CE685-F35A-4CD7-A133-19319B4D4457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77CE685-F35A-4CD7-A133-19319B4D4457}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

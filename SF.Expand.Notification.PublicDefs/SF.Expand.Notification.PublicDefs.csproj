@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>0B83C9A2-804A-4254-874B-9077B0BA63A7</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SF.Expand.Notification.PublicDefs</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SF.Expand.SAFLOGGER" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SF.Expand.Notification\INotifyChannelAsync.cs" />
+    <Compile Include="SF.Expand.Notification\INotifyChannelProcessor.cs" />
+    <Compile Include="SF.Expand.Notification\NotificationChannel.cs" />
+    <Compile Include="SF.Expand.Notification\NotificationChannelRule.cs" />
+    <Compile Include="SF.Expand.Notification\NotificationEvent.cs" />
+    <Compile Include="SF.Expand.Notification\NotificationEventType.cs" />
+    <Compile Include="SF.Expand.Notification\NotificationRequest.cs" />
+    <Compile Include="SF.Expand.Notification\NotifyChannelProcessorFactory.cs" />
+    <Compile Include="SF.Expand.Notification\NotifyOperationResult.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

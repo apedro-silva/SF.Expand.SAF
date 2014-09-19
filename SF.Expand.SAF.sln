@@ -1,0 +1,155 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Black-Box", "Black-Box", "{62C200AA-0228-49EC-A2CF-A5477F792B7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAF.Blobs", "Black-Box\SF.Expand.SAF.Blobs\SF.Expand.SAF.Blobs.csproj", "{FF415AEC-E4C3-435F-90F2-EC61F3CA255A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAF.Core", "Black-Box\SF.Expand.SAF.Core\SF.Expand.SAF.Core.csproj", "{6101BF92-C4B8-4270-8D41-24BBE269BCAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{F62D781B-C901-4D07-840D-20E3FF906D9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAFLOGGER", "Common\SF.Expand.SAFLOGGER\SF.Expand.SAFLOGGER.csproj", "{7DD3711F-7EAA-472E-BBA6-2C5D6CF7E317}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Public", "Public", "{9EDEDDCD-741F-42F8-BDEF-4DE0A8FD77C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAF.CorePublicItf", "Public\SF.Expand.SAF.CorePublicItf\SF.Expand.SAF.CorePublicItf.csproj", "{3626A422-A9AF-48E9-BCE6-1A4E62DB0A48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAF.Configuration", "Common\SF.Expand.SAF.Configuration\SF.Expand.SAF.Configuration.csproj", "{75BDFC69-9ED4-4263-AFD1-767D83A56064}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAF.CryptoEngine", "Black-Box\SF.Expand.SAF.CryptoEngine\SF.Expand.SAF.CryptoEngine.csproj", "{4F75DCD8-16A5-4914-8801-98B767F30CB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAF.Utils", "Common\SF.Expand.SAF.Utils\SF.Expand.SAF.Utils.csproj", "{B7F8BF4E-55E9-4BBB-83CC-46951B86519F}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Business", "..\ExpandSecure\Business", "{DA3C5832-332A-40F4-B6A0-2C8D45959C28}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
+		ProjectReferences = "{75bdfc69-9ed4-4263-afd1-767d83a56064}|SF.Expand.SAF.Configuration.dll;{7DD3711F-7EAA-472E-BBA6-2C5D6CF7E317}|SF.Expand.SAFLOGGER.dll;{ff415aec-e4c3-435f-90f2-ec61f3ca255a}|SF.Expand.SAF.Blobs.dll;{6101BF92-C4B8-4270-8D41-24BBE269BCAC}|SF.Expand.SAF.Core.dll;{3626A422-A9AF-48E9-BCE6-1A4E62DB0A48}|SF.Expand.SAF.CorePublicItf.dll;{4456020e-120c-4098-9e3d-3279adcc1a33}|SF.Expand.Secure.Business.dll;{4F75DCD8-16A5-4914-8801-98B767F30CB7}|SF.Expand.SAF.CryptoEngine.dll;{B7F8BF4E-55E9-4BBB-83CC-46951B86519F}|SF.Expand.SAF.Utils.dll;{14bafdc1-8c0b-4de3-afd9-d0a069013f0b}|SF.Expand.SAF.DeployToken.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/Business"
+		Debug.AspNetCompiler.PhysicalPath = "..\ExpandSecure\Business\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Business\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Business"
+		Release.AspNetCompiler.PhysicalPath = "..\ExpandSecure\Business\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Business\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51174"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Core", "..\ExpandSecure\Core", "{DCC88CE6-0BFB-4FC1-A863-F9A2437CD205}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
+		ProjectReferences = "{4456020e-120c-4098-9e3d-3279adcc1a33}|SF.Expand.Secure.Business.dll;{75BDFC69-9ED4-4263-AFD1-767D83A56064}|SF.Expand.SAF.Configuration.dll;{7DD3711F-7EAA-472E-BBA6-2C5D6CF7E317}|SF.Expand.SAFLOGGER.dll;{6101BF92-C4B8-4270-8D41-24BBE269BCAC}|SF.Expand.SAF.Core.dll;{3626A422-A9AF-48E9-BCE6-1A4E62DB0A48}|SF.Expand.SAF.CorePublicItf.dll;{FF415AEC-E4C3-435F-90F2-EC61F3CA255A}|SF.Expand.SAF.Blobs.dll;{4F75DCD8-16A5-4914-8801-98B767F30CB7}|SF.Expand.SAF.CryptoEngine.dll;{B7F8BF4E-55E9-4BBB-83CC-46951B86519F}|SF.Expand.SAF.Utils.dll;{447c5307-94b0-4308-ab48-f10b73acedeb}|SF.Expand.SAF.Tokens.Google.dll;{956c59ae-9b4d-4445-af95-477a0a5243dc}|SF.Expand.SAF.Tokens.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/Core"
+		Debug.AspNetCompiler.PhysicalPath = "..\ExpandSecure\Core\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Core\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Core"
+		Release.AspNetCompiler.PhysicalPath = "..\ExpandSecure\Core\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Core\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51176"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testers", "Testers", "{DF9299AE-96FC-4E5E-9B9B-09F5C33AF55C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Services", "Business Services", "{CAD1941C-12E5-461A-9F42-26B8F802D987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.Secure.Business", "Business Services\SF.Expand.Secure.Business\SF.Expand.Secure.Business.csproj", "{4456020E-120C-4098-9E3D-3279ADCC1A33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAF.DeployToken", "Black-Box\SF.Expand.SAF.DeployToken\SF.Expand.SAF.DeployToken.csproj", "{14BAFDC1-8C0B-4DE3-AFD9-D0A069013F0B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tokens", "Tokens", "{C9E1B55B-C360-401E-BD7D-14426FF7407B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAF.Tokens.Google", "Tokens\SF.Expand.SAF.Tokens.Google\SF.Expand.SAF.Tokens.Google.csproj", "{447C5307-94B0-4308-AB48-F10B73ACEDEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SF.Expand.SAF.Tokens", "Tokens\SF.Expand.SAF.Tokens\SF.Expand.SAF.Tokens.csproj", "{956C59AE-9B4D-4445-AF95-477A0A5243DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF415AEC-E4C3-435F-90F2-EC61F3CA255A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF415AEC-E4C3-435F-90F2-EC61F3CA255A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF415AEC-E4C3-435F-90F2-EC61F3CA255A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF415AEC-E4C3-435F-90F2-EC61F3CA255A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6101BF92-C4B8-4270-8D41-24BBE269BCAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6101BF92-C4B8-4270-8D41-24BBE269BCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6101BF92-C4B8-4270-8D41-24BBE269BCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6101BF92-C4B8-4270-8D41-24BBE269BCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DD3711F-7EAA-472E-BBA6-2C5D6CF7E317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DD3711F-7EAA-472E-BBA6-2C5D6CF7E317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DD3711F-7EAA-472E-BBA6-2C5D6CF7E317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DD3711F-7EAA-472E-BBA6-2C5D6CF7E317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3626A422-A9AF-48E9-BCE6-1A4E62DB0A48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3626A422-A9AF-48E9-BCE6-1A4E62DB0A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3626A422-A9AF-48E9-BCE6-1A4E62DB0A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3626A422-A9AF-48E9-BCE6-1A4E62DB0A48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75BDFC69-9ED4-4263-AFD1-767D83A56064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75BDFC69-9ED4-4263-AFD1-767D83A56064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75BDFC69-9ED4-4263-AFD1-767D83A56064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75BDFC69-9ED4-4263-AFD1-767D83A56064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F75DCD8-16A5-4914-8801-98B767F30CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F75DCD8-16A5-4914-8801-98B767F30CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F75DCD8-16A5-4914-8801-98B767F30CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F75DCD8-16A5-4914-8801-98B767F30CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F8BF4E-55E9-4BBB-83CC-46951B86519F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F8BF4E-55E9-4BBB-83CC-46951B86519F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F8BF4E-55E9-4BBB-83CC-46951B86519F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F8BF4E-55E9-4BBB-83CC-46951B86519F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA3C5832-332A-40F4-B6A0-2C8D45959C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA3C5832-332A-40F4-B6A0-2C8D45959C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA3C5832-332A-40F4-B6A0-2C8D45959C28}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA3C5832-332A-40F4-B6A0-2C8D45959C28}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DCC88CE6-0BFB-4FC1-A863-F9A2437CD205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC88CE6-0BFB-4FC1-A863-F9A2437CD205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC88CE6-0BFB-4FC1-A863-F9A2437CD205}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC88CE6-0BFB-4FC1-A863-F9A2437CD205}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4456020E-120C-4098-9E3D-3279ADCC1A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4456020E-120C-4098-9E3D-3279ADCC1A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4456020E-120C-4098-9E3D-3279ADCC1A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4456020E-120C-4098-9E3D-3279ADCC1A33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14BAFDC1-8C0B-4DE3-AFD9-D0A069013F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BAFDC1-8C0B-4DE3-AFD9-D0A069013F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14BAFDC1-8C0B-4DE3-AFD9-D0A069013F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14BAFDC1-8C0B-4DE3-AFD9-D0A069013F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{447C5307-94B0-4308-AB48-F10B73ACEDEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{447C5307-94B0-4308-AB48-F10B73ACEDEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{447C5307-94B0-4308-AB48-F10B73ACEDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{447C5307-94B0-4308-AB48-F10B73ACEDEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956C59AE-9B4D-4445-AF95-477A0A5243DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956C59AE-9B4D-4445-AF95-477A0A5243DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956C59AE-9B4D-4445-AF95-477A0A5243DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956C59AE-9B4D-4445-AF95-477A0A5243DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF415AEC-E4C3-435F-90F2-EC61F3CA255A} = {62C200AA-0228-49EC-A2CF-A5477F792B7D}
+		{6101BF92-C4B8-4270-8D41-24BBE269BCAC} = {62C200AA-0228-49EC-A2CF-A5477F792B7D}
+		{4F75DCD8-16A5-4914-8801-98B767F30CB7} = {62C200AA-0228-49EC-A2CF-A5477F792B7D}
+		{14BAFDC1-8C0B-4DE3-AFD9-D0A069013F0B} = {62C200AA-0228-49EC-A2CF-A5477F792B7D}
+		{7DD3711F-7EAA-472E-BBA6-2C5D6CF7E317} = {F62D781B-C901-4D07-840D-20E3FF906D9F}
+		{75BDFC69-9ED4-4263-AFD1-767D83A56064} = {F62D781B-C901-4D07-840D-20E3FF906D9F}
+		{B7F8BF4E-55E9-4BBB-83CC-46951B86519F} = {F62D781B-C901-4D07-840D-20E3FF906D9F}
+		{3626A422-A9AF-48E9-BCE6-1A4E62DB0A48} = {9EDEDDCD-741F-42F8-BDEF-4DE0A8FD77C2}
+		{4456020E-120C-4098-9E3D-3279ADCC1A33} = {CAD1941C-12E5-461A-9F42-26B8F802D987}
+		{447C5307-94B0-4308-AB48-F10B73ACEDEB} = {C9E1B55B-C360-401E-BD7D-14426FF7407B}
+		{956C59AE-9B4D-4445-AF95-477A0A5243DC} = {C9E1B55B-C360-401E-BD7D-14426FF7407B}
+	EndGlobalSection
+EndGlobal

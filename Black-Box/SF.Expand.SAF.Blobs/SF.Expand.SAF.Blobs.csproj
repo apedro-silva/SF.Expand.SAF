@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FF415AEC-E4C3-435F-90F2-EC61F3CA255A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SF.Expand.SAF.Blobs</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SF.Expand.SAF.CryptoEngine">
+      <HintPath>..\..\..\ExpandSecure\Business\Bin\SF.Expand.SAF.CryptoEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SF.Expand.SAF.Blobs\BLOBDataFactory.cs" />
+    <Compile Include="SF.Expand.SAF.Blobs\BLOBStrucSOFT01.cs" />
+    <Compile Include="SF.Expand.SAF.Blobs\BLOBStructInfSrv.cs" />
+    <Compile Include="SF.Expand.SAF.Blobs\IBLOBData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\SF.Expand.SAFLOGGER\SF.Expand.SAFLOGGER.csproj">
+      <Project>{7dd3711f-7eaa-472e-bba6-2c5d6cf7e317}</Project>
+      <Name>SF.Expand.SAFLOGGER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Public\SF.Expand.SAF.CorePublicItf\SF.Expand.SAF.CorePublicItf.csproj">
+      <Project>{3626a422-a9af-48e9-bce6-1a4e62db0a48}</Project>
+      <Name>SF.Expand.SAF.CorePublicItf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SF.Expand.SAF.Core\SF.Expand.SAF.Core.csproj">
+      <Project>{6101bf92-c4b8-4270-8d41-24bbe269bcac}</Project>
+      <Name>SF.Expand.SAF.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
