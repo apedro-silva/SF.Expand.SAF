@@ -1,0 +1,16 @@
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\SF.Expand.SAF.CryptoEngineNative\obj\Debug\SF.Expand.SAF.CryptoEngineNative.csprojResolveAssemblyReference.cache
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\SF.Expand.SAF.CryptoEngineNative\bin\Debug\SF.Expand.SAF.CryptoEngineNative.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\SF.Expand.SAF.CryptoEngineNative\bin\Debug\SF.Expand.SAF.CryptoEngineNative.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\SF.Expand.SAF.CryptoEngineNative\bin\Debug\SF.Expand.SAF.Utils.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\SF.Expand.SAF.CryptoEngineNative\bin\Debug\SF.Expand.SAF.Utils.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\SF.Expand.SAF.CryptoEngineNative\obj\Debug\SF.Expand.SAF.CryptoEngineNative.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\SF.Expand.SAF.CryptoEngineNative\obj\Debug\SF.Expand.SAF.CryptoEngineNative.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\SF.Expand.SAF.CryptoEngineNative\bin\Debug\log4net.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.SAF.CryptoEngineNative\bin\Debug\SF.Expand.SAF.CryptoEngineNative.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.SAF.CryptoEngineNative\bin\Debug\SF.Expand.SAF.CryptoEngineNative.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.SAF.CryptoEngineNative\bin\Debug\SF.Expand.SAF.Utils.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.SAF.CryptoEngineNative\bin\Debug\log4net.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.SAF.CryptoEngineNative\bin\Debug\SF.Expand.SAF.Utils.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.SAF.CryptoEngineNative\obj\Debug\SF.Expand.SAF.CryptoEngineNative.csprojResolveAssemblyReference.cache
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.SAF.CryptoEngineNative\obj\Debug\SF.Expand.SAF.CryptoEngineNative.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.SAF.CryptoEngineNative\obj\Debug\SF.Expand.SAF.CryptoEngineNative.pdb

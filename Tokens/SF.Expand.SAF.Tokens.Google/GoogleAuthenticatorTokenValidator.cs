@@ -6,6 +6,9 @@ using SF.Expand.SAF.Defs;
 using System;
 namespace SF.Expand.SAF.Tokens
 {
+    /// <summary>
+    /// GoogleAuthenticatorTokenValidator : here we perform an OTP validation
+    /// </summary>
 	public class GoogleAuthenticatorTokenValidator : ITokenValidator
 	{
 		private string _masterKey = SAFConfiguration.readMasterKey();

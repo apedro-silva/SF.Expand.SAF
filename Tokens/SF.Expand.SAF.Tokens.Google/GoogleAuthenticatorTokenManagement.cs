@@ -7,7 +7,18 @@ namespace SF.Expand.SAF.Tokens
 	{
 		public OperationResult Create(string tokenVendorID, DateTime expirationDate, string supplierSerialNumber, string creationLotID, string pin, out TokenInfoCore tokenInfoCore)
 		{
-            return new TokensDAO().createToken(tokenVendorID, 0, expirationDate, "", supplierSerialNumber, supplierSerialNumber, "123444", null, out tokenInfoCore);
+            //string criptoKey = "";
+            //long movingFactor = 0;
+            //string internalSerialNumber = "";
+            //string supportCriptoData = null;
+
+
+            ////SF.Expand.SAF.Core.TokensBaseFunctions.TokensCreateNew(TokenSeedType.Dynamic,"", "", null,,
+
+            //return new TokensDAO().createToken(tokenVendorID, movingFactor, expirationDate, criptoKey, supplierSerialNumber, internalSerialNumber, creationLotID, supportCriptoData, out tokenInfoCore);
+
+            return new TokensDAO().newTokenFromGivenSupplierSerialNumber(tokenVendorID, supplierSerialNumber, out tokenInfoCore);
+
 		}
 		public OperationResult UndoCreate(string tokenInternalID)
 		{

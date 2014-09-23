@@ -1,0 +1,14 @@
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\obj\Debug\SF.Expand.Secure.GenerateTokens.csprojResolveAssemblyReference.cache
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\SF.Expand.Secure.GenerateTokens.exe
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\SF.Expand.Secure.GenerateTokens.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\SF.Expand.SAF.Core.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\SF.Expand.SAF.CorePublicItf.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\SF.Expand.SAF.CryptoEngineNative.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\SF.Expand.SAF.Utils.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\log4net.dll
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\SF.Expand.SAF.CorePublicItf.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\SF.Expand.SAF.Core.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\SF.Expand.SAF.CryptoEngineNative.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\bin\Debug\SF.Expand.SAF.Utils.pdb
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\obj\Debug\SF.Expand.Secure.GenerateTokens.exe
+E:\WorkInProgress\BANIF.MALTA\SAF\GenerateTokens\SF.Expand.Secure.GenerateTokens\obj\Debug\SF.Expand.Secure.GenerateTokens.pdb

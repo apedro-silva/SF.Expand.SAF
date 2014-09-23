@@ -202,7 +202,7 @@ namespace SF.Expand.SAF.Core
 		}
 		public static OperationResult TokensImportNew(TokenTypeBaseParams tkTypeBaseParams, string masterKey, string vendorSerialNumber, string externalSeed, string pin, long movingFactor, out TokenCryptoData TokenCryptoData)
 		{
-			TokenCryptoData = new TokenCryptoData(null, null, default(CryptoData), default(TokenTypeBaseParams));
+			TokenCryptoData = new TokenCryptoData(null, null, new CryptoData(), new TokenTypeBaseParams());
 			OperationResult result;
 			try
 			{
@@ -222,7 +222,7 @@ namespace SF.Expand.SAF.Core
 			}
 			catch (Exception ex)
 			{
-				TokenCryptoData = new TokenCryptoData(null, null, default(CryptoData), default(TokenTypeBaseParams));
+				TokenCryptoData = new TokenCryptoData(null, null, new CryptoData(),  new TokenTypeBaseParams());
 				SAFLOGGER.Write(SAFLOGGER.LOGGEREventID.EXCEPTION, "SAFCORE", new string[]
 				{
 					"http://sfexpand.SAFCore.TokensBaseFunctions.softfinanca.com/",
@@ -246,7 +246,7 @@ namespace SF.Expand.SAF.Core
 				long tkmovFactor;
 				if (OperationResult.Error == HOTPCryptoData.Generate(masterKey, null, tkTypeBaseParams, out tkseed, out tkserial, out tkmovFactor))
 				{
-					tokenCryptoData = new TokenCryptoData(null, null, default(CryptoData), default(TokenTypeBaseParams));
+					tokenCryptoData = new TokenCryptoData(null, null, new CryptoData(), new TokenTypeBaseParams());
 					result = OperationResult.Error;
 				}
 				else
@@ -258,7 +258,7 @@ namespace SF.Expand.SAF.Core
 						string supportCryptoData;
 						if (OperationResult.Error == TokensBaseFunctions.tokenTANMatrixIntegrityCheck(_tkCryptoData, _tkCryptoData.GetTokenSeed(masterKey), (dataEntropy == null || dataEntropy.Length < 1) ? new byte[0] : BaseFunctions.convertStringToByteArray(dataEntropy), out supportCryptoData))
 						{
-							tokenCryptoData = new TokenCryptoData(null, null, default(CryptoData), default(TokenTypeBaseParams));
+							tokenCryptoData = new TokenCryptoData(null, null, new CryptoData(), new TokenTypeBaseParams());
 							result = OperationResult.Error;
 							return result;
 						}

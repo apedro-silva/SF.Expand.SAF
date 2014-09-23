@@ -149,7 +149,7 @@ namespace SF.Expand.SAF.Core
 				_cmd.Parameters.Add(base.AddParameter("@Param3", SupplierSerialNumber));
 				base.Connection.Open();
 				object _retID = _cmd.ExecuteScalar();
-				if (_retID == DBNull.Value || long.Parse((string)_retID) == 0L)
+				if (_retID == DBNull.Value || (int)_retID == 0)
 				{
 					SAFLOGGER.Write(SAFLOGGER.LOGGEREventID.WARNING, "SAFCORE", new string[]
 					{
@@ -341,7 +341,7 @@ namespace SF.Expand.SAF.Core
 				base.OpenConnection();
 				_rd = _cmd.ExecuteReader(CommandBehavior.CloseConnection);
 				_rd.Read();
-				result = TokenInfoCore.loadTokenInfoCore((byte)_rd[0], (int)_rd[1], (string)_rd[2], (_rd[3] != DBNull.Value) ? ((string)_rd[3]) : "", (string)_rd[4], (_rd[5] != DBNull.Value) ? ((DateTime)_rd[5]) : DateTime.MinValue, (_rd[7] == DBNull.Value) ? null : _rd[7].ToString(), (TokenStatus)((byte)_rd[6]));
+                result = TokenInfoCore.loadTokenInfoCore((byte)_rd[0], (int)_rd[1], (_rd[2] != DBNull.Value) ? ((string)_rd[2]) : "", (_rd[3] != DBNull.Value) ? ((string)_rd[3]) : "", (string)_rd[4], (_rd[5] != DBNull.Value) ? ((DateTime)_rd[5]) : DateTime.MinValue, (_rd[7] == DBNull.Value) ? null : _rd[7].ToString(), (TokenStatus)((byte)_rd[6]));
 			}
 			catch (Exception ex)
 			{
@@ -426,7 +426,7 @@ namespace SF.Expand.SAF.Core
 				_cmd.Parameters.Add(base.AddParameter("@tkSupplierSerialNumber", supplierSerialNumber));
 				_cmd.Parameters.Add(base.AddParameter("@tkInternalSerialNumber", internalSerialNumber));
 				_cmd.Parameters.Add(base.AddParameter("@tkSupportCriptoData", SupportCryptoData));
-				_cmd.Parameters.Add(base.AddParameter("@tokenSubLotID", "123456"));
+				_cmd.Parameters.Add(base.AddParameter("@tokenSubLotID", null));
 				base.Connection.Open();
 				long _hResult = long.Parse(_cmd.ExecuteScalar().ToString());
 				tokenID = _hResult.ToString();

@@ -25,9 +25,6 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SF.Expand.SAF.CryptoEngine">
-      <HintPath>..\..\..\ExpandSecure\Business\Bin\SF.Expand.SAF.CryptoEngine.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System" />
     <Reference Include="System.XML" />
@@ -66,6 +63,10 @@
     <ProjectReference Include="..\..\Public\SF.Expand.SAF.CorePublicItf\SF.Expand.SAF.CorePublicItf.csproj">
       <Project>{3626a422-a9af-48e9-bce6-1a4e62db0a48}</Project>
       <Name>SF.Expand.SAF.CorePublicItf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SF.Expand.SAF.CryptoEngine\SF.Expand.SAF.CryptoEngine.csproj">
+      <Project>{4f75dcd8-16a5-4914-8801-98b767f30cb7}</Project>
+      <Name>SF.Expand.SAF.CryptoEngine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

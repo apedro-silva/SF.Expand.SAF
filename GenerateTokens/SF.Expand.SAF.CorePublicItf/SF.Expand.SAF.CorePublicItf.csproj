@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{47085A3A-6588-43FC-A795-8DE31E3C9ABE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SF.Expand.SAF.CorePublicItf</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System" />
+    <Reference Include="System.Data.OracleClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SF.Expand.SAF.CorePublicItf\AutenticationStatus.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\AuthExtension.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\AuthExtensionAttribute.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\AuthHeader.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\DALOracle.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\DALSqlServer.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\ITokens.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\ITokenValidator.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\OperationResult.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenDeviceType.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenEventOperation.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenInfo.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenInfoCore.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenMovingFactorType.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenSeedType.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokensEvents.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenStatus.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokensUser.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokensVendorList.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenTotals.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenTotalsByType.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenUserTotals.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenValidationCountByUser.cs" />
+    <Compile Include="SF.Expand.SAF.CorePublicItf\TokenValidationsCount.cs" />
+    <Compile Include="SF.Expand.SAF.Exceptions\SAFBusinessException.cs" />
+    <Compile Include="SF.Expand.SAF.Exceptions\SAFCoreException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SF.Expand.SAF.Utils\SF.Expand.SAF.Utils.csproj">
+      <Project>{c5ddc5de-6460-471c-9618-c5a83105cd0b}</Project>
+      <Name>SF.Expand.SAF.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
