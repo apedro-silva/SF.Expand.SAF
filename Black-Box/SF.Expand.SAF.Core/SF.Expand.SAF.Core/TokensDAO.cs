@@ -1036,5 +1036,48 @@ namespace SF.Expand.SAF.Core
 			}
 			return result;
 		}
-	}
+
+        public object tokenSeedsByParamIDWithNoSubLot(string tokenVendorID, out string tokenKey)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string tokenKeyByTokenVendorID(string tokenVendorID)
+        {
+            IDbCommand _cmd = null;
+            DataSet _ds = new DataSet();
+            DataTable dataTable;
+            string tokenCriptoData=null;
+            try
+            {
+                base.ConnectionString = DBConnectionString.ExpandSAFCore();
+                _cmd = base.CreateCommand("TokenKeyByTokenVendorID", CommandType.StoredProcedure);
+                _cmd.Parameters.Add(base.AddParameter("@TokenVendorID", tokenVendorID));
+                base.CreateDataAdapter(_cmd).Fill(_ds);
+                dataTable = _ds.Tables[0];
+
+                tokenCriptoData = (string)dataTable.Rows[0].ItemArray[0];
+
+
+            }
+            catch (Exception ex)
+            {
+                SAFLOGGER.Write(SAFLOGGER.LOGGEREventID.EXCEPTION, "SAFCORE", new string[]
+				{
+					"http://sfexpand.SAFCore.TokensDAO.softfinanca.com/",
+					Assembly.GetExecutingAssembly().FullName.ToString(),
+					ex.ToString()
+				});
+            }
+            finally
+            {
+                if (_cmd != null)
+                {
+                    _cmd.Dispose();
+                }
+                base.CloseConnection();
+            }
+            return tokenCriptoData;
+        }
+    }
 }

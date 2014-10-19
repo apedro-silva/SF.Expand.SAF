@@ -6,6 +6,7 @@ using SF.Expand.SAF.Defs;
 using System;
 using System.Data;
 using System.Reflection;
+using System.Text;
 namespace SF.Expand.Secure.Business
 {
 	public static class SAFBaseFunctions
@@ -1254,5 +1255,23 @@ namespace SF.Expand.Secure.Business
 		{
 			return new TokensDAO().tokenSeedsByParamIDWithNoSubLot(supplierLotID, out seedsAvailable);
 		}
-	}
+
+        public static OperationResult loadTokenKeyInformation(string tokenID, out string tokenKey)
+        {
+            OperationResult result = OperationResult.Error;
+            tokenKey = null;
+            TokenCryptoData tokenCryptoData2 = new TokensDAO().loadTokenCryptoData(tokenID);
+
+            string masterKey = SF.Expand.SAF.Configuration.SAFConfiguration.readMasterKey();
+            byte[] tokenSeed = tokenCryptoData2.GetTokenSeed(masterKey);
+            if (tokenSeed != null)
+            {
+                Base32Encoder enc = new Base32Encoder();
+                tokenKey = enc.Encode(tokenSeed);
+                result = OperationResult.Success;
+            }
+
+            return result;
+        }
+    }
 }

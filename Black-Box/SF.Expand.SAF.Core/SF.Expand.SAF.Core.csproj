@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="SF.Expand.SAF.Core.Factory\TokensFactory.cs" />
     <Compile Include="SF.Expand.SAF.Core.Factory\TokenValidatorFactory.cs" />
+    <Compile Include="SF.Expand.SAF.Core\Base32Encoder.cs" />
     <Compile Include="SF.Expand.SAF.Core\BaseImportExportTokens.cs" />
     <Compile Include="SF.Expand.SAF.Core\DBConnectionString.cs" />
     <Compile Include="SF.Expand.SAF.Core\HOTPCipher.cs" />

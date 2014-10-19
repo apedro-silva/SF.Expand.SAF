@@ -1,1 +1,1 @@
-SF.Expand.Secure.GenerateTokens.exe -f .\seeds\ -u 1 -t 1 -s 100 -o false -m false
+SF.Expand.Secure.GenerateTokens.exe -f .\seeds\ -u 2 -t 1 -s 100 -o false -m false
